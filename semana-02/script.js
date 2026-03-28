@@ -13,3 +13,10 @@ const mensaje = saludar('Jonathan');
 console.log(  format( mensaje) );
 
 
+const triple = (n) =>  n*3 
+
+console.log( triple(3) ); // 9
+triple = 4;
+
+
+console.log( triple(4) ); // 12
