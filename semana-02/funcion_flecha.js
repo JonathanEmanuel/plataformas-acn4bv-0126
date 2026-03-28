@@ -7,7 +7,10 @@ const saludar = (nombre) => {
     return 'Hola ' + nombre;
 }
 
-const format = ( texto ) => texto.toUpperCase(); 
+const format = ( texto ) => texto.toUpperCase();
+
+const format2 =  texto => texto.toUpperCase(); 
+
 // Llamamos a la función
 const mensaje = saludar('Jonathan');
 console.log(  format( mensaje) );

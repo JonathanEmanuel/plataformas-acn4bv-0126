@@ -1,22 +1,17 @@
-const fn = (n) => n*3
-            //0     1     2    3    4     5 
-let lista = ['🍎','🍌', '🍇', 12, true, fn, 
-                ['Franco', 'Walter', 'Pedro']
-            ];
+const persona = {
+    nombre: 'Sofia',
+    edad: 27,
+    ubicacion: 'Cordoba'
+}
 
-console.log( lista[1]);
-// Accedemos a Walter
-console.log( lista[6][1]);
+persona.email = 'sofia@dv.edu.ar';
 
+persona.edad = 28;
 
-lista[3] = '🍐';
-lista[7] = '🍉';
+console.log(persona.nombre)
 
-lista.push('🍏');
-
-console.table( lista);
-
-
-
-let cantidad = lista.length;
-console.log('La cantidad de elementos es ' + cantidad);
+const usuarios = [
+    { id: 1, nombre: 'Pedro', email: 'pedro@dv.edu.ar'},
+    { id: 2, nombre: 'Rocio', email: 'rocio@dv.edu.ar'},
+    { id: 3, nombre: 'Marcelo', email: 'marcelo@dv.edu.ar'}
+]
