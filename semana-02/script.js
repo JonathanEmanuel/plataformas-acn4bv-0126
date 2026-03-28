@@ -1,22 +1,22 @@
-// No se puede hacer esto!
-// saludar('Sofia');
+const fn = (n) => n*3
+            //0     1     2    3    4     5 
+let lista = ['🍎','🍌', '🍇', 12, true, fn, 
+                ['Franco', 'Walter', 'Pedro']
+            ];
+
+console.log( lista[1]);
+// Accedemos a Walter
+console.log( lista[6][1]);
 
 
-// Declaramos la funciones
-const saludar = (nombre) => {
-    return 'Hola ' + nombre;
-}
+lista[3] = '🍐';
+lista[7] = '🍉';
 
-const format = ( texto ) => texto.toUpperCase(); 
-// Llamamos a la función
-const mensaje = saludar('Jonathan');
-console.log(  format( mensaje) );
+lista.push('🍏');
+
+console.table( lista);
 
 
-let triple = (n) =>  n*3 
 
-console.log( triple(3) ); // 9
-triple = 4;
-
-
-console.log( triple(4) ); // 12
+let cantidad = lista.length;
+console.log('La cantidad de elementos es ' + cantidad);
