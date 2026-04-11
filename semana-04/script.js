@@ -43,3 +43,20 @@ function mostrarIcono(){
     const div = document.querySelector('#icon');
     div.innerHTML= '<img src="users.png"  alt="users"/>'
 }
+const btn = document.querySelector('#btn');
+
+const btnIcono = document.querySelector('#btnIcono');
+const btnSaludo = document.querySelector('#btnSaludo');
+
+
+btnIcono.addEventListener('click', mostrarIcono );
+btnSaludo.addEventListener('click', mostrarNombre);
+
+/* btn.addEventListener('click', function (){
+    alert('Cambiando estilos visuales')
+})
+ */
+btn.addEventListener('click', () => {
+    alert('Cambiando estilos visuales');
+})
+
