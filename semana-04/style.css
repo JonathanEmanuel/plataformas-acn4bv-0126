@@ -1,0 +1,38 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+header {
+    height: 15vh;
+    background-color: #4285f4;
+    color: white;
+}
+
+main {
+    min-height: 80vh;
+    padding: 16px;
+}
+footer {
+    height: 5vh;
+    background-color: black;
+    color: white;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color: teal;
+}
+
+.textImportante {
+    font-weight: 500;
+    color: tomato;
+}
+#textoUnico {
+    font-weight: 500;
+    text-decoration: underline;
+}
