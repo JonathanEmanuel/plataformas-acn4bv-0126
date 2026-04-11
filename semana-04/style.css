@@ -36,3 +36,10 @@ p {
     font-weight: 500;
     text-decoration: underline;
 }
+
+input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
