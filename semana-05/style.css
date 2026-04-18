@@ -99,7 +99,15 @@ hr {
     color: white;
 }
 
+.fa-trash {
+    color: #dc3545;
+}
 
+.fa-trash:hover {
+    color: #dc3545;
+    cursor: pointer;
+    transform: scale(1.2);
+}
 .input {
     width: 100%;
     margin-top: 5px;
@@ -182,4 +190,9 @@ hr {
 
 .align-center {
     align-items: center;
+}
+
+li.completed {
+    text-decoration: line-through;
+    background-color: #5a6268;
 }
