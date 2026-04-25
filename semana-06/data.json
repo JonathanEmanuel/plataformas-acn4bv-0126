@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Julian",
+        "age": 27,
+        "login": true,
+        "materias": ["PHP", "Plataformas de Desarrollo"]
+    },
+    {
+        "name": "Mariana",
+        "age": 29,
+        "login": false,
+        "domicilio": {
+            "calle": "Falsa 123"
+        }
+    }
+]
