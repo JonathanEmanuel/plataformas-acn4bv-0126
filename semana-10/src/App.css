@@ -11,5 +11,7 @@ footer {
 }
 
 .card {
-  min-height: 150px;
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
 }
