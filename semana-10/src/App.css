@@ -9,3 +9,7 @@ main {
 footer {
   height: 10vh;
 }
+
+.card {
+  min-height: 150px;
+}
