@@ -1,0 +1,17 @@
+header {
+  height: 15vh;
+}
+
+main {
+  min-height: 75vh;
+}
+
+footer {
+  height: 10vh;
+}
+
+.card {
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+}
