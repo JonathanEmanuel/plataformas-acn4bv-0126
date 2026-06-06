@@ -4,18 +4,7 @@ import Card from './Card'
 import Cart from './Cart'
 
 const ListsItems = ( { products}) => {
-    //const lista = ['teclado', 'mouse', 'monitor'];
-    // const modificado = lista.map(  item =>  item.toUpperCase() );
-   //const modificado = lista.map(  item =>  <h4> item </h4> );
 
-/*     let arrayAux = [];
-
-    for (let index = 0; index < lista.length; index++) {
-        const element = lista[index].toUpperCase();
-        arrayAux.push( element)
-    }
-
-    console.log(arrayAux); */
 
     const [ cart, setCart ] = useState([]);
     function handlerAdd(param){

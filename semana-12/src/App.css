@@ -15,3 +15,15 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav a.active {
+  border-bottom: 2px solid #262727;
+}
