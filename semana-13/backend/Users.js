@@ -13,7 +13,7 @@ class UsersManager {
                     resolve( this.users )
                 }, 2000)
             } else {
-                reject('Error de Paramentros');
+                reject('Error de Parametros');
             }
        })
     }
