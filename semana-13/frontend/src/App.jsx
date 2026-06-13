@@ -13,7 +13,7 @@ import Register from './pages/Register'
 import Detail from './pages/Detail'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
-
+import Dashboard from './pages/dashboard'
 function App() {
 
 
@@ -21,17 +21,14 @@ function App() {
     <>
       <Header title='React Router Dom' />
       <Nav />
-{/* 
-      <Link to="/"> Inicio</Link> |
-      <Link to="/contact">Contactos</Link> | 
-      <Link to="/login"> Login </Link>
- */}
+
       <Routes>
         <Route path='/' element={ <Home />} />
         <Route path='/contact' element={ <Contact />} />
         <Route path='/login' element={ <Login />} />
         <Route path='/register' element={ <Register />} />
         <Route path='/detail/:id' element={ <Detail />} />
+        <Route path='/dashboard' element={ <Dashboard />} />
         <Route path='*' element={ <NotFound />} />
       </Routes>
       <Footer />
