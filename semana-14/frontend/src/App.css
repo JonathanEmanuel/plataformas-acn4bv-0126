@@ -1,0 +1,29 @@
+header {
+  height: 15vh;
+}
+
+main {
+  min-height: 75vh;
+}
+
+footer {
+  height: 10vh;
+}
+
+.card {
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav a.active {
+  border-bottom: 2px solid #262727;
+}
