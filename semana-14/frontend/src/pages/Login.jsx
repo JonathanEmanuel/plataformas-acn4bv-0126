@@ -2,17 +2,15 @@ import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ( {jwt, saveToken}) => {
 
   const [ user, setUser ] = useState({  email: '', password: ''});
+  const [ token, setToken] = useState('');
   const navigate = useNavigate();
 
-  const handlerForm = (e) => {
+  const handlerForm = async (e) => {
     e.preventDefault();
-    const userRegister = JSON.parse( localStorage.getItem('user'));
-  
-    console.log(user, userRegister)
-
+   
     if( !user.email.includes('@') || !user.email.includes('.')){
       alert('Ingrese un Email Valido');
       return;
@@ -23,11 +21,40 @@ const Login = () => {
         return;
     }
     // Enviar los datos a la API, la cual verifica usuario y contraseña
+    const body = {
+            email: user.email,
+            password: user.password
+          }
+
+    try {
+      const endPoint = 'http://127.0.0.1:5000/api/users/login';
+      const resp =  await fetch(endPoint, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const json = await resp.json();
+      console.log( json);
+      if( json.status == "error"){
+        alert('Usuario o contraseña invalidos')
+        return;
+      } else {
+        saveToken( json.token)
+        setToken(jwt);
+      }
+    } catch (error) {
+      alert('Error del Servidor');
+      console.log( error);
+    }
+
+
+/* 
     if( (user.email == userRegister.email) && (user.password == userRegister.password) ){
       navigate('/dashboard');
     } else {
-      alert('Usuario o contraseña invalidos')
-    }
+    } */
 
   }
 
@@ -60,6 +87,7 @@ const Login = () => {
 
                 <button className='btn btn-dark' type='submit'>Ingresar</button>
               </form>
+              <p>{ token}</p>
           </div>
           <div className="col"></div>
         </div>

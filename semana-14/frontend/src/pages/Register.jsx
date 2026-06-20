@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,11 +7,10 @@ const Register = () => {
   const [ user, setUser ] = useState({ name: '', email: '', password1: '', password2: ''});
   const navigate = useNavigate();
 
-  const handlerForm = (e) => {
-    e.preventDefault();
-    console.log(user);
 
-    console.log('Submit');
+  const handlerForm = async (e) => {
+    e.preventDefault();
+ 
     // Validaciones
     if(user.name.trim() == ""){
       alert('Complente el nombre');
@@ -28,11 +27,28 @@ const Register = () => {
     }
 
     // Enviar a la API los datos
-    localStorage.setItem('user', JSON.stringify({
-      name: user.name,
-      email: user.email,
-      password: user.password1
-    }));
+     // tambien con axios
+    const body = {
+        name: user.name,
+        email: user.email,
+        password: user.password1
+    }
+
+    try {
+      const endPoint = 'http://127.0.0.1:5000/api/users/register';
+      const resp =  await fetch(endPoint, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const json = await resp.json();
+      console.log( json);
+    } catch (error) {
+      alert('Error del Servidor');
+      console.log( error);
+    }
     navigate('/login');
   }
 

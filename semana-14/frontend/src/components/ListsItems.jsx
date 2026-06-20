@@ -19,17 +19,17 @@ const ListsItems = ( { products}) => {
 
         {
             products.map(  
-                product =>  <div className='col-4'>
-                            <Card
-                                onAddCart={ handlerAdd}
-                                key={  product.id }
-                                id={ product.id} 
-                                name={ product.name} 
-                                price={ product.price} 
-                                pic={ product.pic}
-                            /> 
-                        </div> 
-                    )
+                product =>  <div key={  product._id } className='col-4'>
+                                <Card className='col-4'
+                                        onAddCart={ handlerAdd}
+                                        
+                                        id={ product._id} 
+                                        name={ product.name} 
+                                        price={ product.price} 
+                                        pic={ product.pic}
+                                    /> 
+                            </div> 
+                        )
         }
    
 
