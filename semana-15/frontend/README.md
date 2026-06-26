@@ -29,3 +29,5 @@ Lunes y  Jueves
 - 19 Junio: Revisión General de temas y consultas
 
 - 26 Junio: Entrega del TP - Integración de FrontEnd y BackEnd
+
+- 03 Julio 
