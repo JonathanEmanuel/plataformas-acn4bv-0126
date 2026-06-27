@@ -13,25 +13,26 @@ import Register from './pages/Register'
 import Detail from './pages/Detail'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
-import Dashboard from './pages/dashboard'
+import Dashboard from './pages/Dashboard'
+import ProtectedRouter from './components/ProtectedRouter'
 function App() {
-  const [ token, setToken] = useState('asds');
-  const saveToke = (jwt) =>{
-    setToken(jwt)
-  }
 
   return (
     <>
-      <Header title='React Router Dom' />
+      <Header title='Context y Protected Router' />
       <Nav />
 
       <Routes>
         <Route path='/' element={ <Home />} />
         <Route path='/contact' element={ <Contact />} />
-        <Route path='/login' element={ <Login jwt={token} saveToke={ saveToke} />} />
+        <Route path='/login' element={ <Login />} />
         <Route path='/register' element={ <Register />} />
         <Route path='/detail/:id' element={ <Detail />} />
-        <Route path='/dashboard' element={ <Dashboard />} />
+        <Route path='/dashboard' element={  
+                                          <ProtectedRouter>  
+                                            <Dashboard /> 
+                                          </ProtectedRouter>  
+                                        } />
         <Route path='*' element={ <NotFound />} />
       </Routes>
       <Footer />

@@ -1,12 +1,15 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-const Login = ( {jwt, saveToken}) => {
 
+const Login = () => {
   const [ user, setUser ] = useState({  email: '', password: ''});
-  const [ token, setToken] = useState('');
   const navigate = useNavigate();
+
+  const { login } = useContext( AuthContext);
+
 
   const handlerForm = async (e) => {
     e.preventDefault();
@@ -41,20 +44,14 @@ const Login = ( {jwt, saveToken}) => {
         alert('Usuario o contraseña invalidos')
         return;
       } else {
-        saveToken( json.token)
-        setToken(jwt);
+        console.log(json.token)
+        login(json.token);
+        navigate('/dashboard');
       }
     } catch (error) {
       alert('Error del Servidor');
       console.log( error);
     }
-
-
-/* 
-    if( (user.email == userRegister.email) && (user.password == userRegister.password) ){
-      navigate('/dashboard');
-    } else {
-    } */
 
   }
 
@@ -83,11 +80,8 @@ const Login = ( {jwt, saveToken}) => {
                     onChange={handlerChange }
                     name='password' 
                     type="password" className='form-control mb-2' />
-
-
                 <button className='btn btn-dark' type='submit'>Ingresar</button>
               </form>
-              <p>{ token}</p>
           </div>
           <div className="col"></div>
         </div>

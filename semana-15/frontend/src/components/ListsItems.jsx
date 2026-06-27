@@ -14,7 +14,7 @@ const ListsItems = ( { products}) => {
   return (
     <>
     <Cart lista={cart} />
-    <button onClick={ handlerAdd }> add</button>
+
     <div className='row p-4'>
 
         {

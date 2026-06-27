@@ -1,7 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
 import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
+
+  const { token, logout } = useContext( AuthContext);
   return (
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -16,14 +19,24 @@ const Nav = () => {
           {/* <a className="nav-link active" aria-current="page" href="#">Home</a> */}
         </li>
 
-        <li className="nav-item">
-          <NavLink to='/register' className='nav-link '>Registro</NavLink>
 
-        </li>
-        <li className="nav-item">
-          <NavLink to='/login' className='nav-link '>Login</NavLink>
+        {
+           token ? (<li className="nav-item">
+                    <NavLink onClick={ logout } className='nav-link' >Cerrar Sesión</NavLink>
+                  </li>) 
+           : (
+              <>
+                  <li className="nav-item">
+                    <NavLink to='/register' className='nav-link'>Registro</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink to='/login' className='nav-link '>Login</NavLink>
+                  </li>
+              </>
 
-        </li>
+           )
+        }
+
         <li className="nav-item">
           <NavLink to='/contact' className='nav-link '>Contactos</NavLink>
 
